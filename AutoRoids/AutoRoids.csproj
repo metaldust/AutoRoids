@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1AC6A779-AB3D-451D-AB71-B98B72EDF1D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoRoids</RootNamespace>
+    <AssemblyName>AutoRoids</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="accoremgd">
+      <HintPath>..\..\..\Program Files\Autodesk\AutoCAD 2024\accoremgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acdbmgd">
+      <HintPath>..\..\..\Program Files\Autodesk\AutoCAD 2024\acdbmgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acmgd">
+      <HintPath>..\..\..\Program Files\Autodesk\AutoCAD 2024\acmgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SharpDX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\AutoChomp\packages\SharpDX.4.2.0\lib\net45\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DirectInput, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\AutoChomp\packages\SharpDX.DirectInput.4.2.0\lib\net45\SharpDX.DirectInput.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomClass\Engine\EngineBoundingBox.cs" />
+    <Compile Include="CustomClass\Engine\EngineScore.cs" />
+    <Compile Include="CustomClass\Engine\EngineShipDebris.cs" />
+    <Compile Include="CustomClass\Game\GameLine.cs" />
+    <Compile Include="CustomClass\Game\GameRockData.cs" />
+    <Compile Include="CustomClass\Engine\EngineBullet.cs" />
+    <Compile Include="CustomClass\Engine\EngineExplode.cs" />
+    <Compile Include="CustomClass\ProjectManager\clsTest.cs" />
+    <Compile Include="Engine\EngineUpdate\clsUpdateLoop.cs" />
+    <Compile Include="Engine\EngineUpdate\clsUpdatePlayer.cs" />
+    <Compile Include="Engine\EngineUpdate\clsUpdateRock.cs" />
+    <Compile Include="Engine\EngineUpdate\clsUpdateShip.cs" />
+    <Compile Include="CustomClass\Engine\EngineBackground.cs" />
+    <Compile Include="CustomClass\Engine\EngineRock.cs" />
+    <Compile Include="Common\Formulas\clsUpdateMatrix.cs" />
+    <Compile Include="CustomClass\Engine\EngineShip.cs" />
+    <Compile Include="Common\Enum\enumDirection.cs" />
+    <Compile Include="Common\Enum\enumSize.cs" />
+    <Compile Include="Common\Formulas\clsGetBoundingBox.cs" />
+    <Compile Include="Common\Formulas\clsGetIntersection.cs" />
+    <Compile Include="Common\Formulas\clsGetMatrix3d.cs" />
+    <Compile Include="Common\Formulas\clsGetRotation.cs" />
+    <Compile Include="Common\Formulas\clsZoom.cs" />
+    <Compile Include="Common\Static\clsPoints.cs" />
+    <Compile Include="Common\Static\clsStaticRock.cs" />
+    <Compile Include="GameBuild\Cache\clsCacheGetBoundingBox.cs" />
+    <Compile Include="GameBuild\Cache\clsCacheGetBullet.cs" />
+    <Compile Include="GameBuild\Cache\clsCacheGetExplode.cs" />
+    <Compile Include="GameBuild\Cache\clsCacheGetDebris.cs" />
+    <Compile Include="GameBuild\Cache\clsCacheGetRock.cs" />
+    <Compile Include="GameBuild\CreateLevel\clsCreateBullet.cs" />
+    <Compile Include="GameBuild\CreateLevel\clsCreateCommon.cs" />
+    <Compile Include="GameBuild\CreateLevel\clsCreateExplode.cs" />
+    <Compile Include="GameBuild\CreateLevel\clsCreateLevel.cs" />
+    <Compile Include="GameBuild\CreateLevel\clsCreateRock.cs" />
+    <Compile Include="GameBuild\CreateLevel\clsCreateStarfield.cs" />
+    <Compile Include="GameBuild\CreateLevel\clsCreatePoints.cs" />
+    <Compile Include="Engine\EngineLevel\clsCreateEngineBackGround.cs" />
+    <Compile Include="Engine\EngineLevel\clsCreateEngineRock.cs" />
+    <Compile Include="Engine\EngineLevel\clsCreateEngineShip.cs" />
+    <Compile Include="Engine\EngineLevel\clsCreateEngineLevel.cs" />
+    <Compile Include="GameBuild\Geometry\clsAddBlock.cs" />
+    <Compile Include="GameBuild\Geometry\clsAddHatch.cs" />
+    <Compile Include="GameBuild\Geometry\clsAppend.cs" />
+    <Compile Include="GameBuild\Geometry\clsDeleteEntity.cs" />
+    <Compile Include="GameBuild\GetPoints\clsGetPointsBorder.cs" />
+    <Compile Include="GameLoop\Collision\clsExplodeShip.cs" />
+    <Compile Include="GameLoop\Collision\clsTrim.cs" />
+    <Compile Include="GameLoop\Collision\clsTrimCommon.cs" />
+    <Compile Include="GameLoop\Collision\clsCenterCollision.cs" />
+    <Compile Include="GameLoop\Fire\clsFireBullets.cs" />
+    <Compile Include="GameLoop\Fire\clsFireCollision.cs" />
+    <Compile Include="GameLoop\Movement\clsMoveHyperSpace.cs" />
+    <Compile Include="GameLoop\Movement\clsMoveThrust.cs" />
+    <Compile Include="GameLoop\Movement\clsMoveShip.cs" />
+    <Compile Include="Common\Formulas\clsGetInsideBoundary.cs" />
+    <Compile Include="Common\Formulas\clsGetRockIntersection.cs" />
+    <Compile Include="GameLoop\Movement\clsWrap.cs" />
+    <Compile Include="GameLoop\Timers\clsTimerEvents.cs" />
+    <Compile Include="GameLoop\Timers\clsTimers.cs" />
+    <Compile Include="GameBuild\Cache\clsCacheGetPoint.cs" />
+    <Compile Include="GameBuild\Geometry\clsAddGeometry.cs" />
+    <Compile Include="GameBuild\GetPoints\clsGetPointsRock.cs" />
+    <Compile Include="GameBuild\GetPoints\clsGetPointsShield.cs" />
+    <Compile Include="GameBuild\GetPoints\clsGetPointsShip.cs" />
+    <Compile Include="Common\Static\clsExtension.cs" />
+    <Compile Include="GameLoop\Input\clsKeyboard.cs" />
+    <Compile Include="GameLoop\Input\clsSharpDx.cs" />
+    <Compile Include="ProjectManager\clsAddData.cs" />
+    <Compile Include="ProjectManager\winProjectManager.xaml.cs">
+      <DependentUpon>winProjectManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectManager\xmlProjectManager.xaml.cs">
+      <DependentUpon>xmlProjectManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\clsRename.cs" />
+    <Compile Include="UserFormCode\clsGetViewSize.cs" />
+    <Compile Include="UserFormCode\clsViewUtil.cs" />
+    <Compile Include="UserFormCode\clsInit.cs" />
+    <Compile Include="UserFormCode\clsPalette.cs" />
+    <Compile Include="UserFormCode\clsReg.cs" />
+    <Compile Include="UserFormCode\clsTextInput.cs" />
+    <Compile Include="UserForm\xmlAutoRoids.xaml.cs">
+      <DependentUpon>xmlAutoRoids.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\xmlTextBox.xaml.cs">
+      <DependentUpon>xmlTextBox.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ProjectManager\winProjectManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProjectManager\xmlProjectManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserForm\xmlAutoRoids.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserForm\xmlTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AutoCAD">
+      <Guid>{AA9A2205-75AA-43AD-9138-1767F1BB5E0C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Size\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
